@@ -21,10 +21,7 @@ input[type=password] {
 
 /* Set a style for all buttons */
 button {
-    background-color: #04AA6D;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
+    background-color: transparent;
     border: none;
     cursor: pointer;
     width: 100%;
@@ -53,7 +50,7 @@ img.avatar {
     border-radius: 50%;
 }
 
-.container {
+.containerlogin {
     padding: 16px;
 }
 

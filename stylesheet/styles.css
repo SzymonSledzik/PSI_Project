@@ -1,0 +1,29 @@
+.navbar {
+    margin-bottom: 50px;
+    border-radius: 0;
+    background-color: transparent;
+    border: 0;
+    color: black;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  /* Remove the jumbotron's default bottom margin */ 
+   .jumbotron {
+    margin-bottom: 0;
+    background-image: url(bgimg.gif);
+    background-repeat: no-repeat;
+    background-size: 100% 500px;
+    height: 500px;
+    padding-bottom: 50rem;
+    background-color: transparent;
+    background-size: cover;
+  }
+ 
+  /* Add a gray background color and some padding to the footer */
+  footer {
+    background-color: #f2f2f2;
+    padding: 25px;
+  }
+  .container{
+    padding: 0;
+  }
