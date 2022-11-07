@@ -1,7 +1,12 @@
+<?php
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="pl-PL">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Szczecin, moje miasto</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -41,30 +46,43 @@
     
               <div id="id01" class="modal">
           
-                  <form class="modal-content animate" action="/action_page.php" method="post">
+                  <form class="modal-content animate" action="./index.php" method="POST">
                       <div class="imgcontainer">
                           <span onclick="document.getElementById('id01').style.display='none'" class="close"
                               title="Close Modal">&times;</span>
-                          <img src="img_avatar2.png" alt="Avatar" class="avatar">
+                          <!-- <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
                       </div>
           
                       <div class="containerlogin">
-                          <label for="uname"><b>Username</b></label>
+                          <label for="uname"><b>Nazwa Użytkownika</b></label>
                           <input type="text" placeholder="Enter Username" name="uname" required>
           
-                          <label for="psw"><b>Password</b></label>
-                          <input type="password" placeholder="Enter Password" name="psw" required>
+                          <label for="passwd"><b>Hasło</b></label>
+                          <input type="password" placeholder="Enter Password" name="passwd" required>
           
-                          <button type="submit">Login</button>
+                          <button type="submit" name="butt">Login</button>
+                          <?php
+                            
+                            include("php/pass.php");
+
+                            if(isset($_POST['butt'])){
+                              $uname = $_POST['uname'];
+                              $passwd = $_POST['passwd'];
+                              $_SESSION['uname'] = $uname;
+                              $_SESSION['passwd'] = $passwd;
+                              passChecker($_SESSION['passwd'], $_SESSION['uname']);
+                            }
+
+                          ?>
                           <label>
-                              <input type="checkbox" checked="checked" name="remember"> Remember me
+                              <input type="checkbox" checked="checked" name="remember"> Zapamiętaj mnie
                           </label>
                       </div>
           
                       <div class="containerlogin" style="background-color:#f1f1f1">
                           <button type="button" onclick="document.getElementById('id01').style.display='none'"
-                              class="cancelbtn">Cancel</button>
-                          <span class="psw">Forgot <a href="#">password?</a></span>
+                              class="cancelbtn">Anuluj</button><br>
+                          <span class="passwd"><a href="#">Zapomniałeś hasła??</a></span>
                       </div>
                   </form>
               </div></a></li>

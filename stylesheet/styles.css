@@ -1,5 +1,5 @@
 .navbar {
-    margin-bottom: 50px;
+    margin-bottom: 0;
     border-radius: 0;
     background-color: transparent;
     border: 0;
@@ -10,11 +10,11 @@
   /* Remove the jumbotron's default bottom margin */ 
    .jumbotron {
     margin-bottom: 0;
-    background-image: url(bgimg.gif);
+    padding-bottom: 0;
+    background-image: url(/img/bgimg.gif);
     background-repeat: no-repeat;
     background-size: 100% 500px;
-    height: 500px;
-    padding-bottom: 50rem;
+    height: 200px;
     background-color: transparent;
     background-size: cover;
   }
