@@ -1,5 +1,12 @@
 <?php
 session_start();
+
+if(isset($_GET["page"])){
+  $strona=$_GET["page"];
+}else{
+  $strona="main";
+}
+
 ?>
 
 
@@ -13,10 +20,18 @@ session_start();
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="stylesheet/styles.css">
   <link rel="stylesheet" href="stylesheet/register.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="stylesheet/scrollbar.css">
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="js/script.js"> </script>
 </head>
+<script>
+  $(document).ready(function () {
+          if (!$.browser.webkit) {
+              $('.wrapper').html('<p>Sorry! Non webkit users. :(</p>');
+          }
+      });
+</script>
 <body>
 
 <div class="jumbotron">
@@ -33,11 +48,9 @@ session_start();
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Deals</a></li>
-            <li><a href="#">Stores</a></li>
-            <li><a href="#">Contact</a></li>
+            <li class="active"><a href="index.php?page=main">Strona Główna</a></li>
+            <li><a href="index.php?page=Atrakcje">Atrakcje</a></li>
+            <li><a href="index.php?page=sklep">Sklep</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#"><span class="glyphicon glyphicon-user"></span>     
@@ -52,7 +65,16 @@ session_start();
                               title="Close Modal">&times;</span>
                           <!-- <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
                       </div>
-          
+                      <?php
+                      
+                      // if (passChecker($_SESSION['passwd'], $_SESSION['uname'])){
+                      //   $style='style=display: "none";';
+                      
+                      // }
+                      
+                      
+                      
+                      ?>
                       <div class="containerlogin">
                           <label for="uname"><b>Nazwa Użytkownika</b></label>
                           <input type="text" placeholder="Enter Username" name="uname" required>
@@ -94,62 +116,12 @@ session_start();
   </div>
 </div>
 
-
-
-<div class="container">    
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">Wały Chrobrego</div>
-        <div class="panel-body"><img src="https://zabytki.szczecin.pl/uploads/_RDJHZ3MITnO.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-      </div>
-    </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-danger">
-        <div class="panel-heading">Pomnik Czynu Polaków</div>
-        <div class="panel-body"><img src="https://zabytki.szczecin.pl/uploads/_pkmDtj19S0n.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-      </div>
-    </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-success">
-        <div class="panel-heading">Bazylika archikatedralna św. Jakuba</div>
-        <div class="panel-body"><img src="https://zabytki.szczecin.pl/uploads/jAJITOL9eynV.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-      </div>
-    </div>
-  </div>
-</div><br>
-
-<div class="container">    
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">Pałac Grumbkowa – Pod Globusem</div>
-        <div class="panel-body"><img src="https://zabytki.szczecin.pl/uploads/g8lapMOhE5cK.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-      </div>
-    </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-primary">
-        <div class="panel-heading">Kościół św. Jana Ewangelisty</div>
-        <div class="panel-body"><img src="https://zabytki.szczecin.pl/uploads/DLkEfmnJAq95.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-      </div>
-    </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-primary">
-        <div class="panel-heading">Baszta Panieńska</div>
-        <div class="panel-body"><img src="https://zabytki.szczecin.pl/uploads/T7bf489GE1wd.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-      </div>
-    </div>
-  </div>
-</div><br><br>
+<?php
+if($strona!=null) include($strona.'.php');
+?>
 
 <footer class="container-fluid text-center">
-
+????????????
 </footer>
 
 </body>

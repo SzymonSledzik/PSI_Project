@@ -18,14 +18,17 @@ $conn = mysqli_connect($serverName, $userName, $password, $db);
 $query = "SELECT * FROM users";
 $result = $conn->query($query);
 $rows = $result->num_rows;
-
 function passChecker($passwd, $uname){
-    
-    if($uname == $row['uname'] && $passwd == $row['passwd'] ){
-        echo "<div>Zalogowany</div>";}
-    else{
-        echo "Zaloguj się chuju";
-    } 
+    global $rows, $result;
+    for($j =0; $j < $rows; ++$j)
+    {
+        $result->data_seek($j);
+        $row = $result->fetch_array(MYSQLI_ASSOC);
+        if($uname == $row['uname'] && $passwd == $row['passwd'] )
+        {
+           return true;
+        }
+    }
 }
 
 
