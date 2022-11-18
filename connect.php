@@ -16,16 +16,14 @@ if (mysqli_connect_errno()) {
     exit();
 }
 
-echo "Great work!!!"."<br>";
-
 function addToDB($login, $psw){
     global $con;
     $sql = "INSERT INTO `users` (`ID`, `uname`, `passwd`) VALUES (NULL, '$login', '$psw')";
 
     if($result = $con->query($sql)) {
-        echo "Dodano nowy rekord";
+        echo "Zarejestrowano pomyślnie";
     }else{ 
-        echo "Nie udało się dodać nowego rekordu";
+        echo "Nie udało się zarejestrować";
     }
 }
 

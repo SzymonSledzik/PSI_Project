@@ -15,19 +15,18 @@ $db = "paiproject";
 
 $conn = mysqli_connect($serverName, $userName, $password, $db);
 
-$query = "SELECT * FROM users";
-$result = $conn->query($query);
-$rows = $result->num_rows;
+
+
+
 function passChecker($passwd, $uname){
-    global $rows, $result;
-    for($j =0; $j < $rows; ++$j)
+    global $conn;
+    $query = "SELECT * FROM users WHERE uname = '$uname' ";
+    $result = $conn->query($query);
+    $rows = $result->num_rows;
+    $row = $result->fetch_array(MYSQLI_ASSOC);
+    if($uname == $row['uname'] && $passwd == $row['passwd'] )
     {
-        $result->data_seek($j);
-        $row = $result->fetch_array(MYSQLI_ASSOC);
-        if($uname == $row['uname'] && $passwd == $row['passwd'] )
-        {
-           return true;
-        }
+        return true;
     }
 }
 
