@@ -1,36 +1,68 @@
-.navbar-inverse .navbar-nav>li>a {
-  color: #f2f2f2;
-}
-.navbar {
-    margin-bottom: 0;
-    border-radius: 0;
-    background-color: transparent;
-    border: 0;
-    color: black;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-  
-  /* Remove the jumbotron's default bottom margin */ 
-   .jumbotron {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    background: rgb(255,194,28);
-    background: linear-gradient(90deg, rgba(255,194,28,1) 0%, rgba(255,160,38,1) 32%, rgba(236,129,50,1) 100%);
-    padding: 20px;
-    margin-bottom: 20px;
-    background-color: transparent;
-    background-size: cover;
-  }
- 
-  /* Add a gray background color and some padding to the footer */
-  footer {
-    background-color: #f2f2f2;
-    padding: 25px;
-  }
-  .container{
-    padding: 0;
-  }
-  .navbar-inverse .navbar-nav>li>a:hover {
-  color: #1d1c1c;
+* {
+  font-family: 'Courier New', Courier, monospace;
 }
 
+.navbar-inverse .navbar-nav>li>a {
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+  background-color: transparent;
+  border: 0;
+  color: black;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Remove the jumbotron's default bottom margin */
+.jumbotron {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  background: rgb(255, 194, 28);
+  background: linear-gradient(90deg, rgba(196, 178, 140) 0%, rgba(196, 178, 140) 32%, rgba(196, 178, 140) 100%);
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: transparent;
+  background-size: cover;
+}
+
+/* Add a gray background color and some padding to the footer */
+footer {
+  background-color: rgb(143, 98, 93);
+  padding: 25px;
+}
+
+.container {
+  padding: 0;
+}
+
+.navbar-inverse .navbar-nav>.active>a {
+  background-color: rgb(143, 98, 93);
+  color: black;
+}
+
+
+
+
+.panel-primary>.panel-heading {
+  background-color: rgb(166, 193, 214);
+  border-color: rgb(223, 222, 220);
+  font-size: 16px;
+  font-weight: 600;
+
+}
+
+.panel-primary {
+  border-color: rgb(223, 222, 220);
+}
+
+#search-input {
+  height: 40px;
+}
+
+#search-button {
+  height: 40px;
+}
