@@ -7,19 +7,19 @@
     });
 </script>
 
-<div class="container">
-    <div class="row">
+<section class="container">
+    <section class="row">
         <form action="https://www.google.com/search" method="get">
-            <div class="col-sm-4">
-                <div class="form-outline">
+            <section class="col-sm-4">
+                <section class="form-outline">
                     <input id="search-input" type="text" id="form1" class="form-control" />
-                </div>
-            </div>
-            <div class="col-sm-4">
+                </section>
+            </section>
+            <section class="col-sm-4">
                 <button id="search-button" type="submit" class="btn btn-primary" value="Search">
                     <i class="fas fa-search"></i>
                 </button>
-            </div>
+            </section>
         </form>
-    </div>
-</div>
+    </section>
+</section>

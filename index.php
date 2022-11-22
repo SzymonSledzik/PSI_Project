@@ -36,19 +36,19 @@ if (isset($_GET["page"])) {
 
 <body>
 
-  <div class="jumbotron">
-    <div class="container text-center">
+  <section class="jumbotron">
+    <section class="container text-center">
       <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-          <div class="navbar-header">
+        <section class="container-fluid">
+          <section class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#">Logo</a>
-          </div>
-          <div class="collapse navbar-collapse" id="myNavbar">
+          </section>
+          <section class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
               <li class="active"><a href="index.php?page=main">Strona Główna</a></li>
               <li><a href="index.php?page=atrakcje">Atrakcje</a></li>
@@ -60,13 +60,13 @@ if (isset($_GET["page"])) {
 
                   <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
-                  <div id="id01" class="modal">
+                  <section id="id01" class="modal">
 
                     <form class="modal-content animate" action="./index.php" method="POST">
-                      <div class="imgcontainer">
+                      <section class="imgcontainer">
                         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
                         <!-- <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
-                      </div>
+                      </section>
                       <?php
 
                       // if (passChecker($_SESSION['passwd'], $_SESSION['uname'])){
@@ -77,7 +77,7 @@ if (isset($_GET["page"])) {
 
 
                       ?>
-                      <div class="containerlogin">
+                      <section class="containerlogin">
                         <label for="uname"><b>Nazwa Użytkownika</b></label>
                         <input type="text" placeholder="Enter Username" name="uname" required>
 
@@ -101,23 +101,23 @@ if (isset($_GET["page"])) {
                         <label>
                           <input type="checkbox" checked="checked" name="remember"> Zapamiętaj mnie
                         </label>
-                      </div>
+                      </section>
 
-                      <div class="containerlogin" style="background-color:#f1f1f1">
+                      <section class="containerlogin" style="background-color:#f1f1f1">
                         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Anuluj</button><br>
                         <span class="passwd"><a href="index.php?page=signup">Nie masz konta? Zarejestruj się!</a></span><br>
                         <span class="passwd"><a href="index.php?page=remindpaswd">Zapomniałeś hasła??</a></span>
-                      </div>
+                      </section>
                     </form>
-                  </div>
+                  </section>
                 </a></li>
               <li><a href="index.php?page=wyszukiwarka"><span class="glyphicon glyphicon-search"></span></a></li>
             </ul>
-          </div>
-        </div>
+          </section>
+        </section>
       </nav>
-    </div>
-  </div>
+    </section>
+  </section>
 
   <?php
   if ($strona != null) include($strona . '.php');

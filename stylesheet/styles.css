@@ -1,5 +1,5 @@
 * {
-  font-family: 'Courier New', Courier, monospace;
+  /* font-family: Helvetica, sans-serif; */
 }
 
 .navbar-inverse .navbar-nav>li>a {
@@ -7,7 +7,10 @@
   font-size: 16px;
   font-weight: 600;
 }
-
+@font-face {
+  font-family: Marker;
+  src: url(../fonts/PermanentMarker-Regular.ttf);
+}
 .navbar {
   margin-bottom: 0;
   border-radius: 0;
@@ -21,8 +24,8 @@
 .jumbotron {
   margin-bottom: 0;
   padding-bottom: 0;
-  background: rgb(255, 194, 28);
-  background: linear-gradient(90deg, rgba(196, 178, 140) 0%, rgba(196, 178, 140) 32%, rgba(196, 178, 140) 100%);
+  background: #F5E6CB;
+  background: linear-gradient(90deg, #F5E6CB 0%, #F5E6CB 32%, #F5E6CB 100%);
   padding: 20px;
   margin-bottom: 20px;
   background-color: transparent;
@@ -31,7 +34,7 @@
 
 /* Add a gray background color and some padding to the footer */
 footer {
-  background-color: rgb(143, 98, 93);
+  background-color: #F5E6CB;
   padding: 25px;
 }
 
@@ -40,18 +43,18 @@ footer {
 }
 
 .navbar-inverse .navbar-nav>.active>a {
-  background-color: rgb(143, 98, 93);
+  background-color: #BDAE95;
   color: black;
 }
 
 
-
-
 .panel-primary>.panel-heading {
-  background-color: rgb(166, 193, 214);
+  background-color: #A8AABC;
   border-color: rgb(223, 222, 220);
+  color: black;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 400;
+  font-family: Marker;
 
 }
 
@@ -65,4 +68,26 @@ footer {
 
 #search-button {
   height: 40px;
+}
+
+body{
+  background-color: #E3E6FF;
+}
+
+
+.containerimgtext {
+  position: relative;
+}
+
+.top-left {
+  position: absolute;
+  top: 18px;
+  left: 36px;
+  font-size: 16;
+  color: white;
+  font-weight: 600;
+}
+
+.panel-footer{
+  font-family: Marker;
 }

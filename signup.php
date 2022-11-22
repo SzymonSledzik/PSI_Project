@@ -1,10 +1,10 @@
 <body>
   <!-- <button onclick="document.getElementById('id01').style.display='block'">Sign Up</button>
 
-  <div id="id01" class="modal"> -->
+  <section id="id01" class="modal"> -->
     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">times;</span>
     <form class="modal-content animate" action="./signup.php" method="POST">
-      <div class="imgcontainer">
+      <section class="imgcontainer">
         <h1>Sign Up</h1>
         <p>Please fill in this form to create an account.</p>
         <hr>
@@ -20,13 +20,13 @@
 
         <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
-        <div class="clearfix">
+        <section class="clearfix">
           <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
           <button type="submit" class="signup" name="butt">Sign Up</button>
-        </div>
-      </div>
+        </section>
+      </section>
     </form>
-  <!-- </div> -->
+  <!-- </section> -->
 </body>
 
 </html>

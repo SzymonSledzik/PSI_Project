@@ -1,48 +1,48 @@
-<div class="container">
-    <div class=" text-center mt-5 ">
+<section class="container">
+    <section class=" text-center mt-5 ">
         <h1>Formularz kontaktowy</h1>
-    </div>
-    <div class="row ">
-        <div class="col-lg-7 mx-auto">
-            <div class="card mt-2 mx-auto p-4 bg-light">
-                <div class="card-body bg-light">
-                    <div class="container">
+    </section>
+    <section class="row ">
+        <section class="col-lg-7 mx-auto">
+            <section class="card mt-2 mx-auto p-4 bg-light">
+                <section class="card-body bg-light">
+                    <section class="container">
                         <form action="index.php?page=bramaportowa" method="POST" id="contact-form" role="form">
-                            <div class="controls">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
+                            <section class="controls">
+                                <section class="row">
+                                    <section class="col-md-6">
+                                        <section class="form-group">
                                             <label for="form_name">Imie</label>
                                             <input id="form_name" type="text" name="name" class="form-control" placeholder="" required="required" data-error="Firstname is required.">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
+                                        </section>
+                                    </section>
+                                    <section class="col-md-6">
+                                        <section class="form-group">
                                             <label for="form_lastname">Nazwisko</label>
                                             <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="" required="required" data-error="Lastname is required.">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
+                                        </section>
+                                    </section>
+                                </section>
+                                <section class="row">
+                                    <section class="col-md-12">
+                                        <section class="form-group">
                                             <label for="form_message">Wiadomość</label>
                                             <textarea id="form_message" name="message" class="form-control" placeholder="" rows="4" required="required" data-error="Please, leave us a message."></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12" style="margin-bottom: 20px;">
+                                        </section>
+                                    </section>
+                                    <section class="col-md-12" style="margin-bottom: 20px;">
                                         <input type="submit" class="btn btn-success btn-send  pt-2 btn-block
                             " value="Wyślij komentarz" name="button">
-                                    </div>
-                                </div>
-                            </div>
+                                    </section>
+                                </section>
+                            </section>
                         </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+</section>
 <?php
 if (isset($_POST['button'])) {
     contactForm($_POST['name'], $_POST['surname'], $_POST['message'], $strona);
