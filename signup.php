@@ -1,23 +1,7 @@
-<!DOCTYPE html>
-<html lang="pl-PL">
-
-<head>
-  <title>Szczecin, moje miasto</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="stylesheet/styles.css">
-  <link rel="stylesheet" href="stylesheet/register.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script src="js/script.js"> </script>
-</head>
-
 <body>
-  <button onclick="document.getElementById('id01').style.display='block'">Sign Up</button>
+  <!-- <button onclick="document.getElementById('id01').style.display='block'">Sign Up</button>
 
-  <div id="id01" class="modal">
+  <div id="id01" class="modal"> -->
     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">times;</span>
     <form class="modal-content animate" action="./signup.php" method="POST">
       <div class="imgcontainer">
@@ -42,7 +26,7 @@
         </div>
       </div>
     </form>
-  </div>
+  <!-- </div> -->
 </body>
 
 </html>

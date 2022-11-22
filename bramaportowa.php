@@ -7,9 +7,7 @@
         </div>
         <div class="col-sm-8 text-left">
             <?php
-            $zabytek = "Brama Portowa";
-
-            showMonument($zabytek);
+            showMonument($_GET['page']);
 
             ?>
         </div>
@@ -62,9 +60,9 @@
 </div>
 <?php
 if (isset($_POST['button'])) {
-    addComment($_POST['name'], $_POST['surname'], $_POST['message']);
+    addComment($_POST['name'], $_POST['surname'], $_POST['message'], $strona);
 }
-showComment()
+showComment($strona);
 
 
 ?>

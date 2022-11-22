@@ -105,7 +105,8 @@ if (isset($_GET["page"])) {
 
                       <div class="containerlogin" style="background-color:#f1f1f1">
                         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Anuluj</button><br>
-                        <span class="passwd"><a href="#">Zapomniałeś hasła??</a></span>
+                        <span class="passwd"><a href="index.php?page=signup">Nie masz konta? Zarejestruj się!</a></span><br>
+                        <span class="passwd"><a href="index.php?page=remindpaswd">Zapomniałeś hasła??</a></span>
                       </div>
                     </form>
                   </div>
