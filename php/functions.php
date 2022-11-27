@@ -11,12 +11,19 @@ $conn = mysqli_connect($serverName, $userName, $password, $db);
 function addToDB($login, $psw)
 {
     global $conn;
-    $sql = "INSERT INTO `users` (`ID`, `uname`, `passwd`) VALUES (NULL, '$login', '$psw')";
 
-    if ($result = $conn->query($sql)) {
-        echo "Zarejestrowano pomyślnie";
+    $query = "SELECT * FROM users WHERE uname= '$login'";
+    if ($query == null) {
+        $pswd = sha1($psw);
+        $sql = "INSERT INTO `users` (`ID`, `uname`, `passwd`) VALUES (NULL, '$login', '$pswd')";
+
+        if ($result = $conn->query($sql)) {
+            echo "Zarejestrowano pomyślnie";
+        } else {
+            echo "Nie udało się zarejestrować";
+        }
     } else {
-        echo "Nie udało się zarejestrować";
+        echo "Takie konto już istnieje";
     }
 }
 
@@ -28,7 +35,7 @@ function passChecker($passwd, $uname)
     $result = $conn->query($query);
     if ($result != null) {
         $row = $result->fetch_array(MYSQLI_ASSOC);
-        if ($passwd == $row['passwd']) {
+        if (sha1($passwd) == $row['passwd']) {
             return true;
         } else {
             return false;
@@ -70,7 +77,8 @@ function showComment($strona)
     }
 }
 
-function contactForm($name, $surname, $message){
+function contactForm($name, $surname, $message)
+{
     global $conn;
     $sql = "INSERT INTO `messages` (`ID`, `name`, `surname`, `message`) VALUES (NULL, '$name', '$surname', '$message')";
 
