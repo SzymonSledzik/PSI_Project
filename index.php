@@ -65,15 +65,8 @@ if (isset($_GET["page"])) {
                     <form class="modal-content animate" action="./index.php" method="POST">
                       <section class="imgcontainer">
                         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                        <!-- <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
                       </section>
                       <?php
-
-                      // if (passChecker($_SESSION['passwd'], $_SESSION['uname'])){
-                      //   $style='style=display: "none";';
-
-                      // }
-
 
 
                       ?>
@@ -94,7 +87,7 @@ if (isset($_GET["page"])) {
                           $passwd = $_POST['passwd'];
                           $_SESSION['uname'] = $uname;
                           $_SESSION['passwd'] = $passwd;
-                          passChecker($_SESSION['passwd'], $_SESSION['uname']);
+                          $islogin = passChecker($_SESSION['passwd'], $_SESSION['uname']);
                         }
 
                         ?>
@@ -123,10 +116,14 @@ if (isset($_GET["page"])) {
   if ($strona != null) include($strona . '.php');
   ?>
 
-  <footer class="container-fluid text-center">
-    ????????????
-  </footer>
+
 
 </body>
+<footer class="container-fluid text-center">
+  <?php if ($islogin === null) {
+    echo "DUPA";
+  } ?>
+  ????????????
+</footer>
 
 </html>

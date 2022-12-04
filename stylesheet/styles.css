@@ -7,10 +7,12 @@
   font-size: 16px;
   font-weight: 600;
 }
+
 @font-face {
   font-family: Marker;
   src: url(../fonts/PermanentMarker-Regular.ttf);
 }
+
 .navbar {
   margin-bottom: 0;
   border-radius: 0;
@@ -36,6 +38,8 @@
 footer {
   background-color: #F5E6CB;
   padding: 25px;
+  clear: both;
+  position: relative;
 }
 
 .container {
@@ -70,8 +74,9 @@ footer {
   height: 40px;
 }
 
-body{
+body {
   background-color: #E3E6FF;
+  min-height: 100%;
 }
 
 
@@ -88,6 +93,6 @@ body{
   font-weight: 600;
 }
 
-.panel-footer{
+.panel-footer {
   font-family: Marker;
 }

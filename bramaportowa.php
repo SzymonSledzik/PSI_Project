@@ -31,17 +31,11 @@
                                             <input id="form_name" type="text" name="name" class="form-control" placeholder="" required="required" data-error="Firstname is required.">
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="form_lastname">Nazwisko</label>
-                                            <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="" required="required" data-error="Lastname is required.">
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="form_message">Wiadomość</label>
+                                            <label for="form_message">Komentarz</label>
                                             <textarea id="form_message" name="message" class="form-control" placeholder="" rows="4" required="required" data-error="Please, leave us a message."></textarea>
                                         </div>
                                     </div>
@@ -60,7 +54,7 @@
 </div>
 <?php
 if (isset($_POST['button'])) {
-    addComment($_POST['name'], $_POST['surname'], $_POST['message'], $strona);
+    addComment($_SESSION['uname'], $_POST['message'], $strona, $islogin);
 }
 showComment($strona);
 

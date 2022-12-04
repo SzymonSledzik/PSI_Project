@@ -29,5 +29,5 @@ if (isset($_POST['butt'])) {
   $uname = $_POST['uname'];
   $passwd = $_POST['passwd'];
 
-  addToDB($uname, $passwd);
+  signUp($uname, $passwd);
 } ?>

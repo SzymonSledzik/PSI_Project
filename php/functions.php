@@ -8,12 +8,13 @@ $db = "paiproject";
 $conn = mysqli_connect($serverName, $userName, $password, $db);
 
 
-function addToDB($login, $psw)
+function signUp($login, $psw)
 {
     global $conn;
 
     $query = "SELECT * FROM users WHERE uname= '$login'";
-    if ($query == null) {
+    $result = $conn->query($query);
+    if ($result->num_rows === 0) {
         $pswd = sha1($psw);
         $sql = "INSERT INTO `users` (`ID`, `uname`, `passwd`) VALUES (NULL, '$login', '$pswd')";
 
@@ -33,8 +34,8 @@ function passChecker($passwd, $uname)
 
     $query = "SELECT * FROM users WHERE uname = '$uname' ";
     $result = $conn->query($query);
-    if ($result != null) {
-        $row = $result->fetch_array(MYSQLI_ASSOC);
+    $row = $result->fetch_array(MYSQLI_ASSOC);
+    if ($uname == $row['uname']) {
         if (sha1($passwd) == $row['passwd']) {
             return true;
         } else {
@@ -58,13 +59,17 @@ function showMonument($name)
     echo "<img src='" . $row['img'] . "' width=250px>";
 }
 
-function addComment($name, $surname, $message, $strona)
+function addComment($name, $message, $strona, $islogin)
 {
-    global $conn;
-    $sql = "INSERT INTO `comments` (`ID`, `name`, `surname`, `message`, `page`) VALUES (NULL, '$name', '$surname', '$message', '$strona')";
+    if ($islogin == true) {
+        global $conn;
+        $sql = "INSERT INTO `comments` (`ID`, `name`, `message`, `page`) VALUES (NULL, '$name', '$message', '$strona')";
 
-    if ($result = $conn->query($sql)) echo "Dodano nowy rekord";
-    else echo "Nie udało się dodać nowego rekordu";
+        if ($result = $conn->query($sql)) echo "Dodano nowy rekord";
+        else echo "Nie udało się dodać nowego rekordu";
+    } else {
+        echo "Zaloguj się by dodać komentarz!!";
+    }
 }
 
 function showComment($strona)
@@ -73,15 +78,42 @@ function showComment($strona)
     $query = "SELECT * FROM comments WHERE page = '$strona'";
     $result = mysqli_query($conn, $query);
     while ($row = mysqli_fetch_row($result)) {
+        echo "<h3>" . $row[1] . "</h3> <p>" . $row[2] . "</p>";
+    }
+}
+
+function contactForm($name, $message)
+{
+    global $conn;
+    $sql = "INSERT INTO `messages` (`ID`, `uname`, `message`) VALUES (NULL, '$name', '$message')";
+
+    if ($result = $conn->query($sql)) echo "Dodano nowy rekord";
+    else echo "Nie udało się dodać nowego rekordu";
+}
+
+function panelShowComment($panelname)
+{
+    global $conn;
+    $sql = "SELECT * FROM comments WHERE page = '$panelname'";
+    $result = mysqli_query($conn, $sql);
+    while ($row = mysqli_fetch_row($result)) {
         echo "<h3>" . $row[1] . " " . $row[2] . "</h3> <p>" . $row[3] . "</p>";
     }
 }
 
-function contactForm($name, $surname, $message)
+function panelDeleteComment($message)
 {
     global $conn;
-    $sql = "INSERT INTO `messages` (`ID`, `name`, `surname`, `message`) VALUES (NULL, '$name', '$surname', '$message')";
+    $sql = "DELETE FROM `messages` WHERE `message`= '$message'";
 
-    if ($result = $conn->query($sql)) echo "Dodano nowy rekord";
-    else echo "Nie udało się dodać nowego rekordu";
+    if ($result = $conn->query($sql)) echo "Usunieto rekord";
+    else echo "Nie udało się usunac rekordu";
+}
+
+function panelAddInfo()
+{
+}
+
+function updateUserInfo()
+{
 }
